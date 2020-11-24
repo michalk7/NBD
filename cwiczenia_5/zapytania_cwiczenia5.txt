@@ -1,0 +1,45 @@
+--zadanie 1
+MATCH (movies:Movie) RETURN movies
+
+--zadanie 2
+MATCH(hugo:Person {name: "Hugo Weaving"})-[:ACTED_IN]->(hugoWeavingMovies) RETURN hugo,hugoWeavingMovies
+
+--zadanie 3
+MATCH(hugo:Person {name: "Hugo Weaving"})-[:ACTED_IN]->(hugoWeavingMovies)<-[:DIRECTED]-(directors) RETURN directors,hugoWeavingMovies
+
+--zadanie 4
+MATCH(hugo:Person {name: "Hugo Weaving"})-[:ACTED_IN]->(hugoWeavingMovies)<-[:ACTED_IN]-(coActors) RETURN coActors,hugoWeavingMovies
+
+--zadanie 5
+MATCH(matrix:Movie {title: "The Matrix"})<-[:ACTED_IN]-(matrixActors)-[:ACTED_IN]->(otherMatrixActorsMovies) RETURN otherMatrixActorsMovies,matrixActors
+
+--zadanie 6
+MATCH (actor: Person)-[r:ACTED_IN]->(movies) WITH actor, count(r) as acted WHERE acted > 1 RETURN actor, acted
+
+--zadanie 7
+MATCH (director:Person)-[:DIRECTED]->(movies)<-[:WROTE]-(writer:Person) WHERE director = writer RETURN director,movies,writer
+
+--zadanie 8
+MATCH (hugo:Person {name: "Hugo Weaving"})-[:ACTED_IN]->(movies)<-[:ACTED_IN]-(keanu:Person {name: "Keanu Reeves"}) RETURN hugo,keanu,movies
+
+--zadanie 9
+CREATE (CaptainAmerica:Movie {title:'Captain America: The First Avenger', released:2011, tagline:"Steve Rogers, a rejected military soldier, transforms into Captain America after taking a dose of a 'Super-Soldier serum'. But being Captain America comes at a price as he attempts to take down a war monger and a terrorist organization."})
+CREATE (Joe:Person {name: 'Joe Johnston', born: 1950})
+CREATE (Christopher:Person {name: 'Christopher Markus', born: 1970})
+CREATE (Stephen:Person {name: 'Stephen McFeely', born: 1969})
+CREATE (Chris:Person {name: 'Chris Evans', born:1981})
+CREATE (Samuel:Person {name: 'Samuel L. Jackson', born:1948})
+
+CREATE
+(Joe)-[:DIRECTED]->(CaptainAmerica),
+(Christopher)-[:WROTE]->(CaptainAmerica),
+(Stephen)-[:WROTE]->(CaptainAmerica),
+(Chris)-[:ACTED_IN {roles:['Captain America','Steve Rogers']}]->(CaptainAmerica),
+(Samuel)-[:ACTED_IN {roles:['Nick Fury']}]->(CaptainAmerica)
+
+MATCH (a:Person),(b:Movie)
+WHERE a.name = 'Hugo Weaving' AND b.title = 'Captain America: The First Avenger'
+CREATE (a)-[r:ACTED_IN {roles:['Johann Schmidt', 'Red Skull']}]->(b)
+RETURN type(r), r.roles
+
+MATCH (m:Movie {title: 'Captain America: The First Avenger'})-[]-(p:Person) RETURN m,p
