@@ -1,0 +1,45 @@
+--1
+MATCH p=shortestPath(
+(darjeeling:town {name:"Darjeeling"})-[*1..15]-(sandakphu:peak {name:"Sandakphu"})
+)
+RETURN p
+
+--2
+MATCH p=shortestPath(
+(darjeeling:town {name:"Darjeeling"})-[*1..15]-(sandakphu:peak {name:"Sandakphu"})
+)
+WHERE ALL (r IN relationships(p) WHERE r.winter = "true")
+RETURN p
+
+--3A
+Uszereguj trasy którymi można dostać się z Darjeeling na Sandakphu według dystansu
+
+MATCH paths = (d:town {name: 'Darjeeling'})-[*1..30]->(s:peak {name: 'Sandakphu'})
+RETURN paths, reduce(totalDistance = 0, r in relationships(paths) | totalDistance + r.distance) as totalDistance
+ORDER BY totalDistance
+
+--3B
+Znajdź wszystkie miejsca do których można dotrzeć przy pomocy roweru (twowheeler) z Darjeeling latem
+
+MATCH paths = (start:town { name: "Darjeeling" })-[:twowheeler *]-(end)
+WHERE ALL (r IN relationships(paths) WHERE r.summer = "true")
+RETURN paths 
+
+--4
+MATCH (airport:Airport)<-[:ORIGIN*]-(flight:Flight)
+RETURN airport, count(flight) AS flightsCount
+ORDER BY flightsCount DESC
+
+
+--9
+MATCH (airport:Airport)-[:DESTINATION|:ORIGIN]-(flight:Flight)
+RETURN flight.airline, COUNT(DISTINCT airport) AS cityCount
+ORDER BY cityCount
+
+--10
+match path=(src: Airport)<-[:ORIGIN]-(flightOne:Flight)-[:DESTINATION]->(mid:Airport)<-[:ORIGIN]-(flightTwo:Flight)-[:DESTINATION]->(dest:Airport), (flightOne)-[:ASSIGN]-(t1:Ticket), (flightTwo)-[:ASSIGN]-(t2:Ticket)
+WHERE src <> dest
+WITH path, t1.price + t2.price as totalPrice
+return path, totalPrice
+ORDER BY totalPrice
+LIMIT 1
