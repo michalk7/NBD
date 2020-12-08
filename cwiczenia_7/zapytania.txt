@@ -1,0 +1,51 @@
+### zadanie 1 ###
+
+curl -i -XPUT -H "Content-Type: application/json" -d '{"nickname": "boby45", "name": "Bob Nolan", "height": 185, "weight": 90}' http://localhost:8098/buckets/s15122/keys/boby45
+
+curl -i -XPUT -H "Content-Type: application/json" -d '{"nickname": "madKatie", "name": "Katie Brown", "height": 170, "weight": 66}' http://localhost:8098/buckets/s15122/keys/madKatie
+
+curl -i -XPUT -H "Content-Type: application/json" -d '{"nickname": "sadAdam123", "name": "Adam Noah", "height": 190, "weight": 105}' http://localhost:8098/buckets/s15122/keys/sadAdam123
+
+curl -i -XPUT -H "Content-Type: application/json" -d '{"nickname": "fastAndy", "name": "Andy Adams", "height": 176, "weight": 80}' http://localhost:8098/buckets/s15122/keys/fastAndy
+
+curl -i -XPUT -H "Content-Type: application/json" -d '{"nickname": "AmyTheWinner", "name": "Amy Dark", "height": 160, "weight": 59}' http://localhost:8098/buckets/s15122/keys/AmyTheWinner
+
+
+### zadanie 2 ###
+curl -i http://localhost:8098/buckets/s15122/keys/fastAndy
+
+### zadanie 3 ###
+curl -i -XPUT -H "Content-Type: application/json" -d '{"nickname": "sadAdam123", "name": "Adam Noah", "height": 190, "weight": 105, "hobby": "skiing"}' http://localhost:8098/buckets/s15122/keys/sadAdam123
+
+curl -i http://localhost:8098/buckets/s15122/keys/sadAdam123
+
+### zadanie 4 ###
+curl -i -XPUT -H "Content-Type: application/json" -d '{"nickname": "sadAdam123", "name": "Adam Noah", "height": 190, "hobby": "skiing"}' http://localhost:8098/buckets/s15122/keys/sadAdam123
+
+curl -i http://localhost:8098/buckets/s15122/keys/sadAdam123
+
+### zadanie 5 ###
+curl -i -XPUT -H "Content-Type: application/json" -d '{"nickname": "sadAdam123", "name": "Tom Hardy", "height": 190, "hobby": "skiing"}' http://localhost:8098/buckets/s15122/keys/sadAdam123
+
+curl -i http://localhost:8098/buckets/s15122/keys/sadAdam123
+
+### zadanie 6 ###
+curl -i -XDELETE http://localhost:8098/buckets/s15122/keys/fastAndy
+
+curl -i http://localhost:8098/buckets/s15122/keys/fastAndy
+
+### zadanie 7 ###
+curl -i http://localhost:8098/buckets/s15122/keys/easyMonkey
+
+### zadanie 8 ###
+curl -i -XPOST -H "Content-Type: application/json" -d '{"name": "Chuck Mood"}' http://localhost:8098/buckets/s15122/keys
+
+### zadanie 9 ###
+### url do elementu jest w odpowiedzi serwera na zadanie 8
+
+curl -i http://localhost:8098/buckets/s15122/keys/a77peuxxs1mLnNve2vQPrDM9gSd
+
+### zadanie 10 ###
+curl -i -XDELETE http://localhost:8098/buckets/s15122/keys/a77peuxxs1mLnNve2vQPrDM9gSd
+
+curl -i http://localhost:8098/buckets/s15122/keys/a77peuxxs1mLnNve2vQPrDM9gSd

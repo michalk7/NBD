@@ -1,0 +1,19 @@
+HTTP/1.1 204 No Content
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Date: Tue, 08 Dec 2020 22:08:54 GMT
+Content-Type: application/json
+Content-Length: 0
+
+HTTP/1.1 200 OK
+X-Riak-Vclock: a85hYGBgzGDKBVI8+xkWvleIupkHEUpkymNlKCt1ucmXBQA=
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Link: </buckets/s15122>; rel="up"
+Last-Modified: Tue, 08 Dec 2020 22:08:54 GMT
+ETag: "6G5dlyV68K6LmeMB2qHLyO"
+Date: Tue, 08 Dec 2020 22:09:37 GMT
+Content-Type: application/json
+Content-Length: 96
+
+{"nickname": "sadAdam123", "name": "Adam Noah", "height": 190, "weight": 105, "hobby": "skiing"}

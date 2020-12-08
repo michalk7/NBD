@@ -1,0 +1,12 @@
+HTTP/1.1 200 OK
+X-Riak-Vclock: a85hYGBgzGDKBVI8+xkWvleImioDZDNlMCUy5rEyJBW53OTLAgA=
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Link: </buckets/s15122>; rel="up"
+Last-Modified: Tue, 08 Dec 2020 21:55:46 GMT
+ETag: "5tz22VFwwurEkWR9m5B786"
+Date: Tue, 08 Dec 2020 21:57:41 GMT
+Content-Type: application/json
+Content-Length: 75
+
+{"nickname": "fastAndy", "name": "Andy Adams", "height": 176, "weight": 80}

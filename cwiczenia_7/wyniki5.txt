@@ -1,0 +1,19 @@
+HTTP/1.1 204 No Content
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Date: Tue, 08 Dec 2020 22:16:54 GMT
+Content-Type: application/json
+Content-Length: 0
+
+HTTP/1.1 200 OK
+X-Riak-Vclock: a85hYGBgzGDKBVI8+xkWvleIupkHEUpkyWNlCCt3ucmXBQA=
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Link: </buckets/s15122>; rel="up"
+Last-Modified: Tue, 08 Dec 2020 22:16:54 GMT
+ETag: "1Sg386mx01xCVpc9aZ9bnn"
+Date: Tue, 08 Dec 2020 22:17:02 GMT
+Content-Type: application/json
+Content-Length: 81
+
+{"nickname": "sadAdam123", "name": "Tom Hardy", "height": 190, "hobby": "skiing"}
