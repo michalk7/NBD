@@ -1,0 +1,5 @@
+Dane dodane do bazy: {u'hobby': u'skiing', u'nickname': u'andyN', u'name': u'Andrew Noah', u'weight': 105, u'height': 190}
+Update pola 'height'
+Dane po update: {u'hobby': u'skiing', u'nickname': u'andyN', u'name': u'Andrew Noah', u'weight': 105, u'height': 186}
+Wynik pobrania usuniętego dokumentu: None. 
+Czy dokument istnieje? False
